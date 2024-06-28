@@ -531,16 +531,13 @@ Cluster.prototype = {
 
     //클러스터 마커 클릭 시 경고창을 띄웁니다.
     enableClickAlert: function() {
+
         if (this._relation) return;
 
         var map = this._markerClusterer.getMap();
-        var clusterMembers = this.getClusterMember();
 
         this._relation = naver.maps.Event.addListener(this._clusterMarker, 'click', naver.maps.Util.bind(function(e) {
-            var titles = clusterMembers.map(function(marker) {
-                return marker.getTitle();
-            });
-            alert('클러스터에 포함된 매물 제목:\n' + titles.join('\n'));
+            alert('안녕하세요~');
         }, this));
     },
 
